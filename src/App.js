@@ -26,10 +26,22 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense);
+  };
+
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
+
   return (
     <div>
-      <NewExpenses />
-      <Expenses expenses={expenses}/>
+      <NewExpenses onAddExpense={addExpenseHandler} />
+      <Expenses items={expenses} />
     </div>
   );
 }
